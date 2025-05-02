@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novel Kombat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1 class="game-title">NOVEL KOMBAT</h1>
+            <button id="themeToggle" class="theme-btn">🌙 Dark</button>
+        </div>
+
+        <img src="novel.png" alt="Character" class="character-image" id="characterImage">
+
+        <div class="stats">
+            <div class="counter">
+                <span>Clicks:</span>
+                <span class="counter-value" id="counter">0</span>
+            </div>
+            <div class="cps">
+                <span>CPS:</span>
+                <span class="cps-value" id="cps">0</span>
+            </div>
+        </div>
+
+        <div class="upgrades">
+            <h2>Upgrades</h2>
+            <div class="upgrade">
+                <div class="upgrade-info">
+                    <h3>Click Power</h3>
+                    <p>Current: +<span id="clickPower">1</span> per click</p>
+                </div>
+                <button class="upgrade-btn" id="upgradeClickPower">Buy (50)</button>
+            </div>
+            <div class="upgrade">
+                <div class="upgrade-info">
+                    <h3>Auto Clicker</h3>
+                    <p><span id="autoClickers">0</span> auto clicks/sec</p>
+                </div>
+                <button class="upgrade-btn" id="upgradeAutoClicker">Buy (100)</button>
+            </div>
+        </div>
+
+        <div class="characters-section">
+            <h2>Characters</h2>
+            <div class="characters">
+                <div class="character-card active" data-character="novel">
+                    <img src="novel.png" class="character-preview">
+                    <div class="character-name">Novel</div>
+                    <div class="character-status">Selected</div>
+                </div>
+                <div class="character-card" data-character="befridi" data-cost="100">
+                    <img src="befridi.png" class="character-preview">
+                    <div class="character-name">Befridi</div>
+                    <button class="unlock-btn">100 clicks</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

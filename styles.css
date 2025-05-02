@@ -1,0 +1,197 @@
+/* ТЕМЫ */
+:root {
+    /* Светлая тема */
+    --bg-color: #f5f7fa;
+    --container-bg: #ffffff;
+    --text-color: #2d3436;
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --accent-color: #fd79a8;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 15px;
+}
+
+[data-theme="dark"] {
+    /* Тёмная тема */
+    --bg-color: #1a1a2e;
+    --container-bg: #16213e;
+    --text-color: #f5f6fa;
+    --primary-color: #7c6cf1;
+    --secondary-color: #5d4ae9;
+    --accent-color: #ff8fab;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ОСНОВНЫЕ СТИЛИ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    background: var(--container-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* ШАПКА */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.game-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.theme-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ОСНОВНОЙ ГЕЙМПЛЕЙ */
+.character-image {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.character-image:active {
+    transform: scale(0.95);
+}
+
+.stats {
+    background: rgba(108, 92, 231, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.counter, .cps {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.counter-value, .cps-value {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+/* УЛУЧШЕНИЯ */
+.upgrades {
+    margin: 20px 0;
+}
+
+.upgrade {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--container-bg);
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.upgrade-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.upgrade-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.upgrade-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* ПЕРСОНАЖИ */
+.characters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.character-card {
+    background: var(--container-bg);
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.character-card.active {
+    border-color: var(--accent-color);
+}
+
+.character-preview {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin: 0 auto 8px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+}
+
+.character-name {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.unlock-btn {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.unlock-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
